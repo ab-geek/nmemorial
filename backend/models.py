@@ -16,7 +16,7 @@ class Access(models.Model):
         db_table = 'access'
 
     def __unicode__(self):
-        return self.user_email        
+        return self.user_email
 
 
 class DjangoMigrations(models.Model):
@@ -40,7 +40,7 @@ class DocumentGallery(models.Model):
         db_table = 'documentgallery'
 
     def __unicode__(self):
-        return self.documentname        
+        return self.documentname
 
 
 class Memorial(models.Model):
@@ -62,7 +62,7 @@ class Memorial(models.Model):
         db_table = 'memorial'
 
     def __unicode__(self):
-        return self.fname        
+        return self.fname
 
 
 class PhotoGallery(models.Model):
@@ -75,7 +75,7 @@ class PhotoGallery(models.Model):
         db_table = 'photogallery'
 
     def __unicode__(self):
-        return self.photoname        
+        return self.photoname
 
 
 class ResetPwd(models.Model):
@@ -88,7 +88,7 @@ class ResetPwd(models.Model):
         db_table = 'resetpwd'
 
     def __unicode__(self):
-        return self.emailid        
+        return self.emailid
 
 
 class VideoGallery(models.Model):
@@ -102,4 +102,4 @@ class VideoGallery(models.Model):
         db_table = 'videogallery'
 
     def __unicode__(self):
-        return self.videoname        
+        return self.videoname
