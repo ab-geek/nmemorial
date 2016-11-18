@@ -39,7 +39,7 @@ def register(request):
 			output['msg'] = 'Cannot create user at the moment. %s'%str(ex)
 	return JsonResponse(output)
 
-def reset_password(request):
+def reset_password(request):#in progress
 	output = {'success':False}
 	if request.method == 'GET':
 		email = request.GET.get('email')
