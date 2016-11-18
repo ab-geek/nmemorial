@@ -12,7 +12,7 @@ urlpatterns = [
     url(r'^api/login/', login),
     url(r'^api/register/', register),
     url(r'^api/forgot_pw/',forgot_pw),
-    #url(r'^api/get_pins/', views.get_pins),
+    url(r'^api/get_pins/', get_pins),
     #url(r'^api/add_pins/', views.add_pins),
     url(r'^api/search/(?P<memorial_name>[\w+\s+]+)',search),
     url(r'^api/add_story/',add_story),

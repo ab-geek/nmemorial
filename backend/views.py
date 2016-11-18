@@ -139,3 +139,25 @@ def search(request,memorial_name):#in progress
 		output['results'] = serializers.serialize('json', list(search_memorial), fields=('fname','lname'))
 		print output['results']
 	return JsonResponse(output)
+
+
+# http://localhost:8001/api/get_pins/?distance=3000&lat=100&lon=100
+def get_pins(request):
+	output = {'success':False}
+
+	if request.method == 'GET':
+		param_dict=request.GET
+		limit_distance = int(param_dict['distance'])
+		stories = Memorial.objects.all()
+		pins = []
+		for story in stories:
+			distance_difference = haversine(int(param_dict['lat']), int(param_dict['lon']), int(story.latitude), int(story.longitude))
+			if distance_difference < limit_distance:
+				#print 'Matched ', distance_difference
+				pins.append({'lat':story.latitude, 'lon': story.longitude })
+
+		if len(pins):
+			output['pins'] = pins
+		else:
+			output['msg'] = 'No pins found in given distance'
+	return JsonResponse(output)
