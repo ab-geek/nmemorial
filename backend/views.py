@@ -130,8 +130,8 @@ def delete_story(request,memorial_id):
 			output['msg']=e.message
 	return JsonResponse(output)
 
-
-def search(request,memorial_name):
+# http://127.0.0.1:8000/api/search/bishnu%20khanal
+def search(request,memorial_name):#in progress
 	output = {'success':False}
 	if request.method == 'GET':
 		param_dict=request.GET
